@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 var morgan = require('morgan');
 var methodOverride = require('method-override');
 var compression = require('compression');
@@ -11,6 +12,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json());
+//
+app.use(cors());
 // compress all responses
 app.use(compression());
 // enable all CORS requests
