@@ -1,0 +1,29 @@
+<a class="btn btn-primary" ui-sref="registrarPremios-form" role="button">Registrar premio</a>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <th>NOMBRE</th>
+          <th>DESCRIPCION</th>
+          <th>VALOR APROXIMADO</th>
+          <th>PATROCINADOR</th>
+          <th>ESTADO</th>
+          <th colspan="2">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="pre in registrarPremios track by $index">
+            <td>{{pre.nombre}}</td>
+            <td>{{pre.descripcion}}</td>
+            <td>{{pre.valorAproximado}}</td>
+            <td>{{pre.patrocinador}}</td>
+            <td>{{pre.estado}}</td>
+            <td><a ui-sref="registrarPremios-edit({id: pre.id})">Edit</a></td>
+            <td>
+              <button ng-click="delete(pre.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>

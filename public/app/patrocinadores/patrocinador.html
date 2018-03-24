@@ -1,0 +1,26 @@
+<a class="btn btn-primary" ui-sref="patrocinador-form">Agregar Patrocinador</a>
+<div class="table-responsive">
+	<table class="table table-hove">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Direccion</th>
+				<th>Descripcion</th>
+				<th colspan="2">Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="patrocinador in patrocinador track by $index">
+				<td>{{patrocinador.nombre}}</td>
+				<td>{{patrocinador.direccion}}</td>
+				<td>{{patrocinador.descripcion}}</td>
+				<td>
+					<a ui-sref="patrocinador-edit({id: patrocinador.id})">Editar</a><br>
+				</td>
+				<td>
+					<button class="btn btn-danger" ng-click="delete(patrocinador.id)">Eliminar</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

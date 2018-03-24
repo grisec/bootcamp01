@@ -1,0 +1,13 @@
+<form role="form" ng-submit="guardarPatrocinador(patrocinador)">
+    <legend>Registro de patrocinadores</legend>
+    <div class="form-group">
+        <label for="">Nombre:</label>
+        <input type="text" class="form-control" id="" placeholder="Ingrese Nombre" ng-model="patrocinador.nombre">
+		<label for="">Direccion:</label>
+		<input type="text" class="form-control" id="" placeholder="Ingrese direccion" ng-model="patrocinador.direccion">
+		<label for="">Descripcion:</label>
+		<textarea name="" placeholder="Ingrese una escripcion" ng-model="patrocinador.descripcion" class="form-control" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary pull-right" type="submit">Guardar</button>
+    <a ui-sref="patrocinador" class="btn btn-default" role="button">Cancelar</a>
+</form>

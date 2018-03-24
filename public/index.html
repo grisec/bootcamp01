@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="gdgAdmin">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BootCamp GDG</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/sb-admin-2.css">
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="home">GDG Admin</a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+            <div class="navbar-default sidebar" role="navigation">
+                <ul class="nav" id="side-menu">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="eventos">eventos</a></li>
+                    <li><a ui-sref="patrocinador">Patrocinador</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main id="page-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <ui-view></ui-view>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-ui-router.min.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/ui-bootstrap.min.js"></script>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/route.js"></script>
+    <script src="./app/dataService.js"></script>
+
+    <script src="./app/home/homeController.js"></script>
+    <script src="./app/eventos/eventoController.js"></script>
+    <script src="./app/eventos/eventosController.js"></script>
+    <script src="./app/patrocinadores/patrocinadorController.js"></script>
+    <script src="./app/patrocinadores/patrocinadorEditController.js"></script>
+    <script src="./app/patrocinadores/patrocinadorFormController.js"></script>
+</body>
+</html>

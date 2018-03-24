@@ -21,8 +21,8 @@ module.exports = {
         allowNull: false
       },
       ciudad_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
+        // allowNull: false
       },
       latitud: {
         type: Sequelize.STRING
@@ -31,35 +31,35 @@ module.exports = {
         type: Sequelize.STRING
       },
       lugar: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
+        // allowNull: false
       },
       fecha_inicio: {
-        type: Sequelize.DATE,
-        allowNull: false
+        type: Sequelize.DATE
+        // allowNull: false
       },
       fecha_fin: {
-        type: Sequelize.DATE,
-        allowNull: false
+        type: Sequelize.DATE
+        // allowNull: false
       },
       hora_inicio: {
-        type: Sequelize.TIME,
-        allowNull: false
+        type: Sequelize.TIME
+        // allowNull: false
       },
       hora_fin: {
-        type: Sequelize.TIME,
-        allowNull: false
+        type: Sequelize.TIME
+        // allowNull: false
       },
       imagen_url: {
         type: Sequelize.STRING
       },
       cantidad_lugares: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
+        // allowNull: false
       },
       tipo_evento_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
+        // allowNull: false
       },
       created_at: {
         allowNull: false,
