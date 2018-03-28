@@ -66,6 +66,16 @@
 			templateUrl: 'app/patrocinador/patrocinador-form.html', 
 			controller: 'patrocinadorEditController',
 			controllerAs: 'vm',
-		})
+        })
+        // Login state
+        .state('login', {
+            url: '/login',
+            templateUrl: 'app/login/login.html',
+            controller: 'loginController',
+            controllerAs: 'vm',
+            ncyBreadcrumb: {
+                label: 'Home'
+            }
+        })
 	}
 }())

@@ -1,5 +1,6 @@
 var eventos = require('../controllers/eventos');
 var patrocinador = require('../controllers/patrocinadores');
+var login = require('../controllers/login');
 
 // Todas las rutas de la aplicacion deben ser definidos en este archivo
 module.exports = function(router) {
@@ -16,7 +17,10 @@ module.exports = function(router) {
     router.post('/patrocinador', patrocinador.create);
     router.put('/patrocinador/:id', patrocinador.update);
     router.delete('/patrocinador/:id', patrocinador.delete);
-    //Workshops
+    // Workshops
+
+    // Login
+    router.post('/login', login.loginUsuario);
 
     //Otros
 
