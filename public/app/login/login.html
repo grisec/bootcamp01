@@ -1,5 +1,12 @@
 <form id="form-login" role="form">
-  <div class="col-md-4 col-sm-4">
+  <div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Login de Usuarios</h2>
+      </div>
+    </div>
+    <br/>
+    <div class="col-md-4 col-sm-4">
       <div class="form-group">
         <label for="email" class="">Email</label>
         <input ng-model="usuario.email" type="text" class="form-control" id=email placeholder="Introduzca el email" required>
@@ -11,19 +18,6 @@
       <div class="form-group">
         <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin" ng-click="loginUsuario(usuario)">Acceder</button>
       </div>
-  </div>
-  <div class="col-md-4 col-sm-4">
-    <div class="form-group">
-      <a class="btn btn-block btn-social btn-facebook" >
-        <span class="fa fa-facebook"></span> Entrar con Facebook
-      </a>
-      <a class="btn btn-block btn-social btn-google">
-        <span class="fa fa-google"></span> Entrar con Google
-      </a>
-      <a class="btn btn-block btn-social btn-github" ng-click="loginConGitHub(usuario)">
-        <span class="fa fa-github"></span> Entrar con GitHub
-      </a>
     </div>
-  </div>
   </div>
   </form>

@@ -77,5 +77,15 @@
                 label: 'Home'
             }
         })
+        // Logout state
+        .state('logout', {
+            url: '/logout',
+            templateUrl: 'app/logout/logout.html',
+            controller: 'logoutController',
+            controllerAs: 'vm',
+            ncyBreadcrumb: {
+                label: 'Home'
+            }
+        })
 	}
 }())
