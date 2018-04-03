@@ -5,22 +5,23 @@
         .module('gdgAdmin')
         .controller('eventoController', eventoController);
 
-    eventoController.$inject = ['$scope', '$state', '$stateParams', 'dataService'];
+    eventoController.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'dataService'];
 
-    function eventoController($scope, $state, $stateParams, dataService) {
+    function eventoController($scope, $rootScope, $state, $stateParams, dataService) {
         var vm = this;
         vm.evento = {};
         vm.table_name = 'eventos';
+        var token = $rootScope.token;
         activate();
         
         vm.submitEvento = function () {
             if ($state.current.name == 'form-evento-create') {
-                return dataService.saveEntity(vm.table_name, vm.evento)
+                return dataService.saveEntity(vm.table_name, vm.evento, token)
                     .then(function (result) {
                         $state.go('eventos');
                     });
             } else {
-                return dataService.updateEntity(vm.table_name, vm.evento)
+                return dataService.updateEntity(vm.table_name, vm.evento, token)
                     .then(function (result) {
                         $state.go('eventos');
                     });
@@ -28,14 +29,14 @@
         }
 
         function getEventoById () {
-            return dataService.getEntityById(vm.table_name, $stateParams.id)
+            return dataService.getEntityById(vm.table_name, $stateParams.id, token)
             .then(function (evento) {
                 return evento;
             });
         }
 
         vm.deleteEvento = function(id) {
-            return dataService.deleteEntity(vm.table_name, id)
+            return dataService.deleteEntity(vm.table_name, id, token)
                 .then(function (result) {
                     $state.go('eventos');
                 });

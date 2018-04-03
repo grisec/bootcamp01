@@ -14,7 +14,7 @@
 		this.updateEntity = updateEntity
 		this.deleteEntity = deleteEntity
 
-		function getEntityAll(table) {
+		function getEntityAll(table, token) {
 			var endpoint = '';
 			switch(table) {
 				case 'eventos':
@@ -30,7 +30,11 @@
 				default: ''
 			}
 
-			return $http.get(endpoint)
+			return $http.get(endpoint, {
+				headers: {
+					"Authorization": token
+				}
+			  })
 				.then(function(result) {
 					return result.data
 				})
@@ -39,7 +43,7 @@
 				});
 		}
 
-		function getEntityById(table, id) {
+		function getEntityById(table, id, token) {
 			var endpoint = '';
 			switch(table) {
 				case 'eventos':
@@ -55,7 +59,11 @@
 				default: ''
 			}
 
-			return $http.get(endpoint + '/' + id)
+			return $http.get(endpoint + '/' + id, {
+				headers: {
+					"Authorization": token
+				}
+			  })
 				.then(function(result) {
 					return result.data
 				})
@@ -64,17 +72,29 @@
 				});
 		}
 
-		function saveEntity(table, data) {
-			return $http.post(config.serviceUrl + table, data)
+		function saveEntity(table, data, token) {
+			return $http.post(config.serviceUrl + table, data, {
+				headers: {
+					"Authorization": token
+				}
+			  })
 		}
 
-		function updateEntity(table, data) {
-			return $http.put(config.serviceUrl + table + '/' + data.id, data)
+		function updateEntity(table, data, token) {
+			return $http.put(config.serviceUrl + table + '/' + data.id, data, {
+				headers: {
+					"Authorization": token
+				}
+			  })
 
 		}
 
-		function deleteEntity(table, id) {
-			return $http.delete(config.serviceUrl + table + '/' + id)
+		function deleteEntity(table, id, token) {
+			return $http.delete(config.serviceUrl + table + '/' + id, {
+				headers: {
+					"Authorization": token
+				}
+			  })
 		}
 	}
 })()

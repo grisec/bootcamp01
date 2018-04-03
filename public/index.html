@@ -15,14 +15,15 @@
                 <a class="navbar-brand" ui-sref="home">GDG Admin</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#">Mi Perfil</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
+                <li ng-if="identity"><a href="#">Mi Perfil</a></li>
+                <li ng-if="identity"><a ui-sref="logout">Cerrar Sesión</a></li>
             </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <ul class="nav" id="side-menu">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="eventos">eventos</a></li>
-                    <li><a ui-sref="patrocinador">Patrocinador</a></li>
+                    <li ng-if="identity"><a ui-sref="home">Home</a></li>
+                    <li ng-if="!identity"><a ui-sref="login">Login</a></li>
+                    <li ng-if="identity"><a ui-sref="eventos">Eventos</a></li>
+                    <li ng-if="identity"><a ui-sref="patrocinador">Patrocinador</a></li>
                 </ul>
             </div>
         </nav>
@@ -45,6 +46,7 @@
     <script src="./app/app.js"></script>
     <script src="./app/route.js"></script>
     <script src="./app/dataService.js"></script>
+    <script src="./app/login/loginService.js"></script>
 
     <script src="./app/home/homeController.js"></script>
     <script src="./app/eventos/eventoController.js"></script>
@@ -52,5 +54,7 @@
     <script src="./app/patrocinadores/patrocinadorController.js"></script>
     <script src="./app/patrocinadores/patrocinadorEditController.js"></script>
     <script src="./app/patrocinadores/patrocinadorFormController.js"></script>
+    <script src="./app/login/loginController.js"></script>
+    <script src="./app/logout/logoutController.js"></script>
 </body>
 </html>
