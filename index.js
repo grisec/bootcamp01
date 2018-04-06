@@ -12,6 +12,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
 app.use(bodyParser.json());
+//
+app.use(cors());
 // compress all responses
 app.use(compression());
 // Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
